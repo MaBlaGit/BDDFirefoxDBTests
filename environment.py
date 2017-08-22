@@ -6,7 +6,7 @@ from selenium import webdriver
 
 def before_scenario(context, scenario):
     """Set up fixture."""
-    context.driver = webdriver.Firefox(firefox_profile='/home/mariusz/.mozilla/firefox/gni9ozeu.profileQA')
+    context.driver = webdriver.Firefox()
     context.driver.maximize_window()
 
 

@@ -1,5 +1,4 @@
 
 website_url = {
-    'website': 'https://www.python.org'
+    'website': 'https://www.python.org/'
 }
-

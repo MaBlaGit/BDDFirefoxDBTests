@@ -91,7 +91,3 @@ class BrowserDBManager(object):
         self.conn.cursor()
         self.conn.execute(sql_query)
         self.conn.commit()
-
-# if __name__ == '__main__':
-#     test = BrowserDBManager('/tmp/', 'places.sqlite')
-#     test.list_all_dbs(BrowserDBManager.find_folder_with_dbs('/tmp/'))

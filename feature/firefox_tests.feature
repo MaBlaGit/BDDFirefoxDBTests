@@ -1,15 +1,10 @@
 Feature: Test saving browse history in Firefox places.sqlite database.
 
-  Background: Log to the Firefox moz_places database and delete all entries
-    Given I connect to the "places.sqlite" database
-    When I run "delete_all" query against "moz_places"
-    Then the "moz_places" should be empty
-
   Scenario Outline: Check if Firefox save browsing history
     Given I go to the "website"
-    And I check if "website" is visible
-    When I run "select_all" query against "moz_places"
-    Then the "website" should be in "moz_places" table
+    And I check if page is "visible"
+    When I run "find_website_name" query against "moz_places" table in "places.sqlite" database
+    Then the "website" should be in the table
 
       Examples:
         |       website         |
