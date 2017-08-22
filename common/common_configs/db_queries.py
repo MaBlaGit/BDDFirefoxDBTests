@@ -2,7 +2,7 @@
 """DB queries used.
 dbs_places - path to folder where browser dbs are stored."""
 
-dbs_place = '/home/mariusz/.mozilla/firefox/gq66jmn4.default/'
+dbs_place = '/tmp/'
 
 
 def select_db_queries(select, db_name):

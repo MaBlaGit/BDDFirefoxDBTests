@@ -1,6 +1,7 @@
 from behave import given, when, then
 from common.database_management_class.db_mamagement import BrowserDBManager
 from common.common_configs.db_queries import *
+from common.common_steps.common_behave_steps import *
 
 
 @given('I connect to the "{db_name}" database')

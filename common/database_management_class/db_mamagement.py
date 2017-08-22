@@ -19,8 +19,19 @@ class BrowserDBManager(object):
     As a second argument, pass to the function name of the table."""
 
     def __init__(self, path_to_dbs_folder, name_of_db):
-        self.path_to_db = BrowserDBManager.if_db_exists(path_to_dbs_folder + name_of_db)
+        self.path_to_db = BrowserDBManager.if_db_exists(
+                          BrowserDBManager.find_folder_with_dbs(path_to_dbs_folder) + name_of_db)
         self.conn = BrowserDBManager.create_connection(self.path_to_db)
+
+    @staticmethod
+    def find_folder_with_dbs(path_to_db):
+        """Build path to dbs folder.
+        :param path_to_db - entry path where temporary folder with DB's of Firefox
+        is created.
+        :return full path with temporary folder containing DB's"""
+        for element in os.listdir(path_to_db):
+            if element.startswith('rust_mozprofile'):
+                return "{0}/{1}/".format(path_to_db, element)
 
     @staticmethod
     def if_db_exists(path_to_db):
@@ -80,3 +91,7 @@ class BrowserDBManager(object):
         self.conn.cursor()
         self.conn.execute(sql_query)
         self.conn.commit()
+
+# if __name__ == '__main__':
+#     test = BrowserDBManager('/tmp/', 'places.sqlite')
+#     test.list_all_dbs(BrowserDBManager.find_folder_with_dbs('/tmp/'))
