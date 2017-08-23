@@ -80,7 +80,7 @@ class BrowserDBManager(object):
         :param sql_query(str) - selected sql query
         """
         cur = self.conn.cursor()
-        cur.execute("{}".format(sql_query))
+        cur.execute("{0}".format(sql_query))
         rows = cur.fetchall()
         return rows
 

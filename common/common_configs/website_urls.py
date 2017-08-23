@@ -1,4 +1,6 @@
 
 website_url = {
-    'website': 'https://www.python.org/'
+    'python': 'https://www.python.org/',
+    'edX': 'https://www.edx.org/',
+    'udemy': 'https://www.udemy.com/',
 }
