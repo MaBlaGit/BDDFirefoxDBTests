@@ -37,6 +37,19 @@ def get_element(context, locator, locator_type='id'):
         raise Exception('Element not found!')
 
 
+def delete_all_cookies(context):
+    context.driver.delete_all_cookies()
+
+
+def click_at(context, locator, locator_type='id'):
+    element = get_element(context, locator, locator_type)
+    element.click()
+
+
+def refresh_page(context):
+    context.driver.refresh()
+
+
 def is_element_visible(context, locator, locator_type='id'):
     try:
         by_type = get_by(locator_type)

@@ -5,4 +5,5 @@ website_url = {
     'python': 'https://www.python.org/',
     'edX': 'https://www.edx.org/',
     'udemy': 'https://www.udemy.com/',
+    'netflix': 'https://www.netflix.com/pl-en/',
 }
